@@ -1,0 +1,8 @@
+---
+uid: 111YOURUID111
+api-key: 111YOURAPIKEY111
+api-secret: 111YOURSECRET111
+show:
+  - line
+  - signals
+  - studies

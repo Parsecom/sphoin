@@ -1,5 +1,5 @@
 
-# <img  src="https://a.sphoin.app/logo"  alt="drawing"  width="100"/>
+# <img  src="https://api.sphoin.app/logo"  alt="drawing"  width="100"/>
 
 <img  src="https://img.shields.io/pypi/v/sphoin.svg"/><img  src="https://img.shields.io/pypi/pyversions/sphoin.svg"/> 
 
@@ -7,7 +7,7 @@
 
 Connect via [apiv1](https://api.sphoin.app/api/v1) to [sphoin.app](https://www.sphoin.app) Pro Slots.
 
-<img  src="https://a.sphoin.app/clie"  alt="drawing" width="100%" />
+<img  src="https://api.sphoin.app/clie"  alt="drawing" width="100%" />
 
 # Installation
 
@@ -65,4 +65,4 @@ my_slot = Slot(uid="111YOURUID111",api_key="111YOURAPIKEY111",api_secret="111YOU
 print(my_slot.json())
 ```
 
-<img  src="https://a.sphoin.app/clih"  alt="drawing" width="100%" />
+<img  src="https://api.sphoin.app/clih"  alt="drawing" width="100%" />

@@ -1,13 +1,14 @@
 
+
 # <img  src="https://api.sphoin.app/logo"  alt="drawing"  width="100"/>
 
 <img  src="https://img.shields.io/pypi/v/sphoin.svg"/><img  src="https://img.shields.io/pypi/pyversions/sphoin.svg"/> 
 
 
 
-Connect via [apiv1](https://api.sphoin.app/api/v1) to [sphoin.app](https://www.sphoin.app) Pro Slots.
+Connect to [sphoin.app](https://www.sphoin.app) Pro Slots.
 
-<img  src="https://api.sphoin.app/clie"  alt="drawing" width="100%" />
+<img  src="https://firebasestorage.googleapis.com/v0/b/sphoin-545ba.appspot.com/o/cli.png?alt=media&token=e3c578f1-1cb5-4907-b57c-4037bba45c26"  alt="drawing" width="100%" />
 
 # Installation
 
@@ -22,12 +23,12 @@ This is the preferred method to install sphoin, as it will always install the mo
 
 ### From sources
 
-The sources for sphoin can be downloaded from the `Github repo`_.
-You can either clone the public repository:
+The sources for sphoin can be downloaded from the `Github repo`.
+* clone the public repository
 ```
 git clone https://github.com/Parsecom/sphoin
 ```
-Once you have a copy of the source, you can install it with:
+* install from source
 ```
 python setup.py install
 ```
@@ -64,5 +65,3 @@ Init Slot with token and secret:
 my_slot = Slot(uid="111YOURUID111",api_key="111YOURAPIKEY111",api_secret="111YOURSECRET111")
 print(my_slot.json())
 ```
-
-<img  src="https://api.sphoin.app/clih"  alt="drawing" width="100%" />

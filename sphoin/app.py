@@ -3,7 +3,7 @@
 __author__ = "pom11"
 __copyright__ = "Copyright 2022, Parsec Original Mastercraft S.R.L."
 __license__ = "MIT"
-__version__ = "1.1.1"
+__version__ = "1.1.11"
 __maintainer__ = "pom11"
 __email__ = "office@parsecom.ro"
 
@@ -61,7 +61,7 @@ class Slot():
 				self.loop = data["show"]
 				self.evaluate(banner=True)
 			else:
-				print("Error\nYou might want to check Pro Slot config")
+				print("Error\nYou might want to check Pro Slot config from app")
 				sys.exit()
 
 
@@ -201,7 +201,7 @@ class Slot():
 	def banner(self):
 		emp = dt.timedelta(seconds=int(self.ETA))
 		disp1 = f"{self.exchange} \x1b[30;47;5m| {self.market} | {self.interval} \x1b[30;43;5m"
-		disp2 = f"| Threshold \x1b[30;47;5m| {self.buy_threshold} | {self.sell_threshold} \x1b[30;43;5m"
+		disp2 = f"| Threshold \x1b[30;46;5m| {self.buy_threshold} \x1b[30;45;5m| {self.sell_threshold} \x1b[30;43;5m"
 		disp3 = f"| ETA \x1b[30;47;5m| {emp} \x1b[30;43;5m"
 		disp0 = "Enter refresh | h help | q Quit"
 		disp1 = f"{disp1}{disp2}{disp3}".ljust(int(self.sizeX/2*1.6)," ")

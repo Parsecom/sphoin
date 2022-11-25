@@ -3,7 +3,7 @@
 __author__ = "pom11"
 __copyright__ = "Copyright 2022, Parsec Original Mastercraft S.R.L."
 __license__ = "MIT"
-__version__ = "1.1.1"
+__version__ = "1.1.11"
 __maintainer__ = "pom11"
 __email__ = "office@parsecom.ro"
 
@@ -24,11 +24,10 @@ setup(
 	author_email='office@parsecom.ro',
 	python_requires='>=3.6',
 	classifiers=[
-		'Development Status :: 2 - Pre-Alpha',
+		'Development Status :: 5 - Production/Stable',
 		'Intended Audience :: Developers',
 		'License :: OSI Approved :: MIT License',
 		'Natural Language :: English',
-		'Programming Language :: Python :: 3',
 		'Programming Language :: Python :: 3.6',
 		'Programming Language :: Python :: 3.7',
 		'Programming Language :: Python :: 3.8',
@@ -51,6 +50,6 @@ setup(
 	packages=find_packages(include=['sphoin', 'sphoin.*']),
 	setup_requires=setup_requirements,
 	url='https://github.com/Parsecom/sphoin',
-	version='1.1.1',
+	version='1.1.11',
 	zip_safe=True,
 )

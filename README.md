@@ -33,7 +33,7 @@ git clone https://github.com/Parsecom/sphoin
 python setup.py install
 ```
 # Usage
-### example.json configuration file template
+### config.yaml configuration file template
 ```yaml
 ---
 uid: 111YOURUID111
@@ -52,6 +52,10 @@ sphoin --help
 View example
 ```
 sphoin --example
+```
+Load config file
+```
+sphoin --file config.yaml
 ```
 
 ### To use sphoin in a python project:

@@ -1,14 +1,21 @@
+from textual.widgets import MarkdownViewer, Static
+from textual.containers import Container
+from textual.app import ComposeResult
+from textual.reactive import reactive
+from rich.text import Text
 
+md = """\
 
-# <img  src="https://api.sphoin.app/logo"  alt="drawing"  width="100"/>
+# TUI
 
-<img  src="https://img.shields.io/pypi/v/sphoin.svg"/><img  src="https://img.shields.io/pypi/pyversions/sphoin.svg"/> 
+## Key bindings
 
-
-
-Connect to [sphoin.app](https://www.sphoin.app) Pro Slots.
-
-<img  src="https://firebasestorage.googleapis.com/v0/b/sphoin-545ba.appspot.com/o/cli.png?alt=media&token=e3c578f1-1cb5-4907-b57c-4037bba45c26"  alt="drawing" width="100%" />
+* h - Help sidebar
+* r - Refresh Slot data
+* t - Toggle theme
+* s - Signals theme
+* b - Toggle brightness
+* q - Quit
 
 # Installation
 
@@ -35,7 +42,7 @@ python setup.py install
 # Usage
 ## config.yaml configuration file template
 ```yaml
----
+-----
 uid: 111YOURUID111
 api-key: 111YOURAPIKEY111
 api-secret: 111YOURSECRET111
@@ -44,10 +51,10 @@ layout:
   - time
   - signals
   - studies
-  - footer
+  - banner
 ```
 
-## To use sphoin TUI via CLI:
+## TUI:
 ```
 sphoin --help
 ```
@@ -57,22 +64,8 @@ sphoin --example
 ```
 Load config file
 ```
-sphoin --config config.yaml
+sphoin --file config.yaml
 ```
-Print Plot test
-```
-sphoin --plot
-sphoin.plot
-```
-
-## TUI - Key bindings
-
-* h - Help sidebar
-* r - Refresh Slot data
-* t - Toggle theme
-* s - Signals theme
-* b - Toggle brightness
-* q - Quit
 
 ## To use sphoin in a python project:
 
@@ -85,10 +78,22 @@ from rich import inspect
 Init Slot with token and secret:
 ```python
 my_slot = Slot(uid="111YOURUID111",
-      api_key="111YOURAPIKEY111",
-      api_secret="111YOURSECRET111")
+			api_key="111YOURAPIKEY111",
+			api_secret="111YOURSECRET111")
 print(my_slot.json)
 # insepct slot attributes
 print(my_slot.__doc__)
 print(inspect(my_slot,all=True))
 ```
+
+"""
+
+class Title(Static):
+	pass
+
+
+class Help(Container):
+
+	def compose(self) -> ComposeResult:
+		yield Title(Text.from_markup("[bold cyan]sphoin[/][bold magenta].app[/] [bold yellow]TUI[/]"))
+		yield MarkdownViewer(md, show_table_of_contents=True)

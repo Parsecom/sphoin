@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+Dockerfile
+
 # C extensions
 *.so
 .DS_Store

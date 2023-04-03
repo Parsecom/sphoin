@@ -3,6 +3,6 @@
 __author__ = "pom11"
 __copyright__ = "Copyright 2023, Parsec Original Mastercraft S.R.L."
 __license__ = "MIT"
-__version__ = "2.0.2"
+__version__ = "2.0.3"
 __maintainer__ = "pom11"
 __email__ = "office@parsecom.ro"

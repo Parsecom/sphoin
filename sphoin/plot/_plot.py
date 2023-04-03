@@ -182,9 +182,9 @@ rich Text
 					paint0 = text_with_style(string=horizontal,fg=line_color,bg=background_color)
 					try:#background from signal
 						if signals[x]>=max_flag:
-							paint0 = text_with_style(string=horizontal,fg="black",bg=color2)
-						elif signals[x]<=min_flag:
 							paint0 = text_with_style(string=horizontal,fg="black",bg=color1)
+						elif signals[x]<=min_flag:
+							paint0 = text_with_style(string=horizontal,fg="black",bg=color2)
 					except:
 						pass
 					result[rows - y0][x + offset] = paint0
@@ -205,9 +205,9 @@ rich Text
 						paint1 = text_with_style(string=going_lower1,fg=line_color,bg=background_color)
 						try:
 							if signals[x]>=max_flag:
-								paint1 = text_with_style(string=going_lower1,fg="black",bg=color2)
-							elif signals[x]<=min_flag:
 								paint1 = text_with_style(string=going_lower1,fg="black",bg=color1)
+							elif signals[x]<=min_flag:
+								paint1 = text_with_style(string=going_lower1,fg="black",bg=color2)
 						except:
 							pass
 						result[rows - y1][x + offset] = paint1
@@ -227,9 +227,9 @@ rich Text
 						paint2 = text_with_style(string=going_lower2,fg=line_color,bg=background_color)
 						try:
 							if signals[x]>=max_flag:
-								paint2 = text_with_style(string=going_lower2,fg="black",bg=color2)
-							elif signals[x]<=min_flag:
 								paint2 = text_with_style(string=going_lower2,fg="black",bg=color1)
+							elif signals[x]<=min_flag:
+								paint2 = text_with_style(string=going_lower2,fg="black",bg=color2)
 						except:
 							pass
 						result[rows - y0][x + offset] = paint2
@@ -250,9 +250,9 @@ rich Text
 						paint1 = text_with_style(string=going_up1,fg=line_color,bg=background_color)
 						try:
 							if signals[x]>=max_flag:
-								paint1 = text_with_style(string=going_up1,fg="black",bg=color2)
-							elif signals[x]<=min_flag:
 								paint1 = text_with_style(string=going_up1,fg="black",bg=color1)
+							elif signals[x]<=min_flag:
+								paint1 = text_with_style(string=going_up1,fg="black",bg=color2)
 						except:
 							pass
 						result[rows - y1][x + offset] = paint1
@@ -272,9 +272,9 @@ rich Text
 						paint2 = text_with_style(string=going_up2,fg=line_color,bg=background_color)
 						try:
 							if signals[x]>=max_flag:
-								paint2 = text_with_style(string=going_up2,fg="black",bg=color2)
-							elif signals[x]<=min_flag:
 								paint2 = text_with_style(string=going_up2,fg="black",bg=color1)
+							elif signals[x]<=min_flag:
+								paint2 = text_with_style(string=going_up2,fg="black",bg=color2)
 						except:
 							pass
 						result[rows - y0][x + offset] = paint2
@@ -297,9 +297,9 @@ rich Text
 						paint3 = text_with_style(string=vertical,fg=line_color,bg=background_color)
 						try:
 							if signals[x]>=max_flag:
-								paint3 = text_with_style(string=vertical,fg="black",bg=color2)
-							elif signals[x]<=min_flag:
 								paint3 = text_with_style(string=vertical,fg="black",bg=color1)
+							elif signals[x]<=min_flag:
+								paint3 = text_with_style(string=vertical,fg="black",bg=color2)
 						except:
 							pass
 						result[rows - y][x + offset] = paint3
@@ -388,9 +388,9 @@ rich Text
 			if series[i] == None or int(series[i])==0:
 				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=background_color))
 			elif int(series[i]) == 1:
-				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=f"{bright}{color2}"))
-			elif int(series[i]) == -1:
 				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=f"{bright}{color1}"))
+			elif int(series[i]) == -1:
+				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=f"{bright}{color2}"))
 		
 		return Text.assemble(*tuple(inter))
 

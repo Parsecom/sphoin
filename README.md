@@ -8,7 +8,7 @@
 
 Connect to [sphoin.app](https://www.sphoin.app) Pro Slots.
 
-<img  src="https://firebasestorage.googleapis.com/v0/b/sphoin-545ba.appspot.com/o/cli.png?alt=media&token=e3c578f1-1cb5-4907-b57c-4037bba45c26"  alt="drawing" width="100%" />
+<img  src="https://firebasestorage.googleapis.com/v0/b/sphoin-545ba.appspot.com/o/tui.png?alt=media&token=ac155618-b87a-45b2-bbaa-bdaee83b4651"  alt="drawing" width="100%" />
 
 # Installation
 

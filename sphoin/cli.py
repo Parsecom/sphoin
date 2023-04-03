@@ -3,7 +3,7 @@
 __author__ = "pom11"
 __copyright__ = "Copyright 2023, Parsec Original Mastercraft S.R.L."
 __license__ = "MIT"
-__version__ = "2.0.3"
+__version__ = "2.0.4"
 __maintainer__ = "pom11"
 __email__ = "office@parsecom.ro"
 
@@ -23,7 +23,7 @@ table.add_column('Help',justify='left', style='bold cyan', no_wrap=False)
 data = [
 		['--help','-h', 'Print help'],
 		['--example','-e','Start TUI with example configuration'],
-		['--file','-c','Load .yaml config file'],
+		['--config','-c','Load .yaml config file'],
 		['--plot','-p','Test Plot or type sphoin.plot']
 	]
 for d in data:

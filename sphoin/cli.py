@@ -3,7 +3,7 @@
 __author__ = "pom11"
 __copyright__ = "Copyright 2023, Parsec Original Mastercraft S.R.L."
 __license__ = "MIT"
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 __maintainer__ = "pom11"
 __email__ = "office@parsecom.ro"
 
@@ -54,6 +54,7 @@ def main():
 		print(f" [bold cyan]Loading[/bold cyan] [yellow]{args.config}[/]...")
 		slot = Slot(config=args.config)
 		if slot == "slot_error":
+			print(" [red]Unkonwn error[/]")
 			sys.exit(1)
 		elif slot.status == 'error':
 			print(f" [yellow]status[/] : [red]{slot.status}[/]")
@@ -67,7 +68,18 @@ def main():
 	elif args.example:
 		print(" [bold cyan]Loading...[/bold cyan]")
 		slot = Slot(config="example")
-		TUI(slot=slot).run()
+		if slot == "slot_error":
+			print(" [red]Unkonwn error[/]")
+			sys.exit(1)
+		elif slot.status == 'error':
+			print(f" [yellow]status[/] : [red]{slot.status}[/]")
+			print(f" [red]error[/]: {slot.error}")
+			sys.exit(1)
+		elif slot.status == 'live':
+			TUI(slot=slot).run()
+		else:
+			print(" [red]Unkonwn error[/]")
+			sys.exit(1)
 		
 	
 

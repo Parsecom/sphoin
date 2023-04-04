@@ -32,8 +32,13 @@ git clone https://github.com/Parsecom/sphoin
 ```
 python setup.py install
 ```
-# Usage
-## config.yaml configuration file template
+
+## Docker
+```
+docker pull pom11/sphoin
+```
+
+## `.yaml` config file
 ```yaml
 ---
 uid: 111YOURUID111
@@ -45,9 +50,29 @@ layout:
   - signals
   - studies
   - footer
+  
 ```
 
-## To use sphoin TUI via CLI:
+In `layout` specifies what `Plot`s should be displayed
+
+* `line` - Price graph
+* `time` - Time bar
+* `signals` - Signals sum graph
+* `studies` - Studies bars
+* `footer` - Footer with Slot details
+
+# Usage
+
+## TUI key bindings
+
+* h - Help sidebar
+* r - Refresh Slot data
+* t - Toggle theme
+* s - Signals theme
+* b - Toggle brightness
+* q - Quit
+
+## CLI
 ```
 sphoin --help
 ```
@@ -65,16 +90,18 @@ sphoin --plot
 sphoin.plot
 ```
 
-## TUI - Key bindings
+## Docker
+Pull image from docker hub
+```shell
+docker pull pom11/sphoin
+```
+To run sphoin TUI with `config` file in docker you need to mount local directory to `/usr/src/app`
+```shell
+docker run -v ${PWD}/config.yaml:/usr/src/app/config.yaml -it pom11/sphoin -c config.yaml
+``` 
 
-* h - Help sidebar
-* r - Refresh Slot data
-* t - Toggle theme
-* s - Signals theme
-* b - Toggle brightness
-* q - Quit
 
-## To use sphoin in a python project:
+## Python
 
 Import package:
 ```python

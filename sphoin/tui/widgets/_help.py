@@ -5,10 +5,7 @@ from textual.reactive import reactive
 from rich.text import Text
 
 md = """\
-
-# TUI
-
-## Key bindings
+# TUI key bindings
 
 * h - Help sidebar
 * r - Refresh Slot data
@@ -39,10 +36,15 @@ git clone https://github.com/Parsecom/sphoin
 ```
 python setup.py install
 ```
-# Usage
-## config.yaml configuration file template
+
+## Docker
+```
+docker pull pom11/sphoin
+```
+
+## `.yaml` config file
 ```yaml
------
+---
 uid: 111YOURUID111
 api-key: 111YOURAPIKEY111
 api-secret: 111YOURSECRET111
@@ -51,10 +53,21 @@ layout:
   - time
   - signals
   - studies
-  - banner
+  - footer
+  
 ```
 
-## TUI:
+In `layout` specifies what `Plot`s should be displayed
+
+* `line` - Price graph
+* `time` - Time bar
+* `signals` - Signals sum graph
+* `studies` - Studies bars
+* `footer` - Footer with Slot details
+
+# Usage
+
+## CLI
 ```
 sphoin --help
 ```
@@ -64,10 +77,26 @@ sphoin --example
 ```
 Load config file
 ```
-sphoin --file config.yaml
+sphoin --config config.yaml
+```
+Print Plot test
+```
+sphoin --plot
+sphoin.plot
 ```
 
-## To use sphoin in a python project:
+## Docker
+Pull image from docker hub
+```shell
+docker pull pom11/sphoin
+```
+To run sphoin TUI with `config` file in docker you need to mount local directory to `/usr/src/app`
+```shell
+docker run -v ${PWD}/config.yaml:/usr/src/app/config.yaml -it pom11/sphoin -c config.yaml
+``` 
+
+
+## Python
 
 Import package:
 ```python
@@ -78,8 +107,8 @@ from rich import inspect
 Init Slot with token and secret:
 ```python
 my_slot = Slot(uid="111YOURUID111",
-			api_key="111YOURAPIKEY111",
-			api_secret="111YOURSECRET111")
+      api_key="111YOURAPIKEY111",
+      api_secret="111YOURSECRET111")
 print(my_slot.json)
 # insepct slot attributes
 print(my_slot.__doc__)

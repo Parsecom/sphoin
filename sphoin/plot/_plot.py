@@ -5,6 +5,7 @@ from dateutil import tz
 from ..models import Ohlcv, Study
 from ..app import Slot
 from ..utils import isNumber, uni_chars, intersperse, text_with_style
+from rich.console import Console
 from rich.color import Color, ANSI_COLOR_NAMES
 from rich.text import Text
 from rich.style import Style
@@ -38,8 +39,8 @@ time_bar
 		sizeX: int = 50,
 		signal_as_line: bool = False,
 		dark_theme: bool = True,
-		brightness: bool = True) -> str:
-
+		brightness: bool = True,
+		as_ansi: bool = False) -> str:
 		"""
 Generate an ascii chart for a series
 
@@ -81,6 +82,8 @@ dark_theme : bool
 	Default : True
 brightness : bool
 	Default : True
+as_ansi : bool
+	Default : False
 
 Returns
 ------
@@ -324,6 +327,11 @@ rich Text
 			ret.append(Text.assemble(*tuple(r),end=""))
 		ret = intersperse(ret,Text("\n"))
 		ret = Text.assemble(*tuple(ret))
+		if as_ansi:
+			console = Console()
+			with console.capture() as capture:
+				console.print(ret)
+			ret = capture.get()
 		return ret
 
 	def study_bar(
@@ -332,7 +340,8 @@ rich Text
 		color2: str = 'cyan', 
 		sizeX: int = 50,
 		dark_theme: bool = True,
-		brightness: bool = True) -> Text:
+		brightness: bool = True,
+		as_ansi: bool = False) -> Text:
 		"""
 Generate an ascii bar chart for Sphoin Slot Study
 
@@ -362,7 +371,8 @@ dark_theme : bool
 	Default : True
 brightness : bool
 	Default : True
-
+as_ansi : bool
+	Default : False
 Returns
 ------
 rich Text
@@ -391,14 +401,20 @@ rich Text
 				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=f"{bright}{color1}"))
 			elif int(series[i]) == -1:
 				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=f"{bright}{color2}"))
-		
-		return Text.assemble(*tuple(inter))
+		ret = Text.assemble(*tuple(inter))
+		if as_ansi:
+			console = Console()
+			with console.capture() as capture:
+				console.print(ret)
+			ret = capture.get()
+		return ret
 
 	def time_bar(
 		slot: Slot, 
 		sizeX: int = 50,
 		dark_theme: bool = True,
-		brightness: bool = True) -> str:
+		brightness: bool = True,
+		as_ansi: bool = False) -> str:
 		"""
 Generate an ascii time bar for a Sphoin Slot
 
@@ -419,6 +435,9 @@ dark_theme : bool
 	Default : True
 brightness : bool
 	Default : True
+as_ansi : bool
+	Default : False
+
 Returns
 ------
 rich Text
@@ -465,5 +484,11 @@ rich Text
 				_add -= 1
 			result.insert(0,text_with_style(string=uni_chars['space']*_add,fg=line_color,bg=background_color))
 			_times = Text.assemble(*tuple(result))
-		return Text.assemble(_label,_times)
+		ret = Text.assemble(_label,_times)
+		if as_ansi:
+			console = Console()
+			with console.capture() as capture:
+				console.print(ret)
+			ret = capture.get()
+		return ret
 

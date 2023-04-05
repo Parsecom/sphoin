@@ -2,9 +2,7 @@
 
 # <img  src="https://api.sphoin.app/logo"  alt="drawing"  width="100"/>
 
-<img  src="https://img.shields.io/pypi/v/sphoin.svg"/><img  src="https://img.shields.io/pypi/pyversions/sphoin.svg"/> 
-
-
+[![PyPI](https://img.shields.io/pypi/v/sphoin.svg)](https://pypi.org/project/sphoin/) [![PyPI](https://img.shields.io/pypi/pyversions/sphoin.svg)](https://img.shields.io/pypi/pyversions/sphoin.svg)
 
 Connect to [sphoin.app](https://www.sphoin.app) Pro Slots.
 

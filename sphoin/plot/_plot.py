@@ -413,7 +413,7 @@ rich Text
 		slot: Slot, 
 		sizeX: int = 50,
 		dark_theme: bool = True,
-		brightness: bool = True,
+		brightness: bool = False,
 		as_ansi: bool = False) -> str:
 		"""
 Generate an ascii time bar for a Sphoin Slot

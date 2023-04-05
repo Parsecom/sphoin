@@ -3,7 +3,7 @@
 __author__ = "pom11"
 __copyright__ = "Copyright 2023, Parsec Original Mastercraft S.R.L."
 __license__ = "MIT"
-__version__ = "2.0.7"
+__version__ = "2.0.8"
 __maintainer__ = "pom11"
 __email__ = "office@parsecom.ro"
 
@@ -56,7 +56,7 @@ def test():
 
 	console = Console()
 
-	slot = Slot(config='example')
+	slot = Slot.from_config()
 
 	close = Plot.line(
 		series=slot.ohlcv.close,

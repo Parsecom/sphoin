@@ -98,17 +98,45 @@ docker run -v ${PWD}/config.yaml:/usr/src/app/config.yaml -it pom11/sphoin -c co
 
 ## Python
 
-Import package:
+Import package
 ```python
 from sphoin.app import Slot
-from rich import print
-from rich import inspect
 ```
-Init Slot with token and secret:
+### Slot from keys
 ```python
-my_slot = Slot(uid="111YOURUID111",
+my_slot = Slot.from_keys(uid="111YOURUID111",
       api_key="111YOURAPIKEY111",
       api_secret="111YOURSECRET111")
+```
+### Slot from config file
+```python
+my_slot = Slot.from_config(file="/absolute/path/of/config.yaml")
+```
+### Slot from dict
+Obtain dict from `https://api.sphoin.app/api/v1/data/json` endpoint
+```python
+import requests
+
+url = "https://api.sphoin.app/api/v1/data/json"
+
+payload = "{\n    \"uid\": \"111YOURUID111\",\n    \"api-key\": \"111YOURAPIKEY111\",\n    \"api-secret\": \"111YOURSECRET111\"\n}"
+headers = {
+  'X-sphoin.app': 'LIadeCyi15FAwoRBkiu9fJsYPvWecSxb'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+json = response.json()
+```
+Init Slot from obtained result
+```python
+my_slot = Slot.from_dict(data=json)
+```
+### Inspect Slot
+```python
+from rich import print
+from rich import inspect
+
 print(my_slot.json)
 # insepct slot attributes
 print(my_slot.__doc__)

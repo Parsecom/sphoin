@@ -39,7 +39,7 @@ time_bar
 		sizeX: int = 50,
 		signal_as_line: bool = False,
 		dark_theme: bool = True,
-		brightness: bool = True,
+		brightness: bool = False,
 		as_ansi: bool = False) -> str:
 		"""
 Generate an ascii chart for a series
@@ -340,7 +340,7 @@ rich Text
 		color2: str = 'cyan', 
 		sizeX: int = 50,
 		dark_theme: bool = True,
-		brightness: bool = True,
+		brightness: bool = False,
 		as_ansi: bool = False) -> Text:
 		"""
 Generate an ascii bar chart for Sphoin Slot Study
@@ -370,7 +370,7 @@ dark_theme : bool
 	Theme of chart plot
 	Default : True
 brightness : bool
-	Default : True
+	Default : False
 as_ansi : bool
 	Default : False
 Returns

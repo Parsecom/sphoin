@@ -328,7 +328,7 @@ rich Text
 		ret = intersperse(ret,Text("\n"))
 		ret = Text.assemble(*tuple(ret))
 		if as_ansi:
-			console = Console()
+			console = Console(legacy_windows=True,force_terminal=True,color_system='standard')
 			with console.capture() as capture:
 				console.print(ret)
 			ret = capture.get()
@@ -403,7 +403,7 @@ rich Text
 				inter.append(text_with_style(string=uni_chars['space'],fg=line_color,bg=f"{bright}{color2}"))
 		ret = Text.assemble(*tuple(inter))
 		if as_ansi:
-			console = Console()
+			console = Console(legacy_windows=True,force_terminal=True,color_system='standard')
 			with console.capture() as capture:
 				console.print(ret)
 			ret = capture.get()
@@ -486,7 +486,7 @@ rich Text
 			_times = Text.assemble(*tuple(result))
 		ret = Text.assemble(_label,_times)
 		if as_ansi:
-			console = Console()
+			console = Console(legacy_windows=True,force_terminal=True,color_system='standard')
 			with console.capture() as capture:
 				console.print(ret)
 			ret = capture.get()
